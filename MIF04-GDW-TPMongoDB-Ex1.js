@@ -1,4 +1,3 @@
-
 /*** EXO 1 : Q1 **************************************************************/
 
 var nom_etu1 = "Bouneffa Massinissa";
@@ -11,16 +10,15 @@ var num_etu2 = "p1311388";
 /*** EXO 1 : Q2 **************************************************************/
 
 var exo1q2map = function () {
-	  emit("restaurants", 1)
-
+    emit("restaurants", 1)
 }
 
 var exo1q2red = function (key, values) {
-var sum = 0;
-  for (var i = 0; i < values.length; i++) {
-  	sum = sum + values[i]
-  }
-  return sum
+    var sum = 0;
+    for (var i = 0; i < values.length; i++) {
+        sum = sum + values[i]
+    }
+    return sum
 }
 
 // db.restaurants.mapReduce(exo1q2map, exo1q2red, {out : {inline:1}});
@@ -29,7 +27,7 @@ var sum = 0;
 /*** EXO 1 : Q3 **************************************************************/
 
 var exo1q3map = function () {
-  emit("grades", this.grades.length)
+    emit("grades", this.grades.length)
 }
 
 var exo1q3red = exo1q2red;
@@ -40,7 +38,7 @@ var exo1q3red = exo1q2red;
 /*** EXO 1 : Q4 **************************************************************/
 
 var exo1q4map = function () {
-  /*TODO*/
+    /*TODO*/
 }
 
 var exo1q4red = exo1q2red;
@@ -49,13 +47,15 @@ var exo1q4red = exo1q2red;
 
 /*** EXO 1 : Q5 **************************************************************/
 
-var exo1q5 = {}   /*TODO*/;
+var exo1q5 = {
+    /*TODO*/
+};
 // reponse : 6086
 
 /*** EXO 1 : Q6 **************************************************************/
 
 var exo1q6map = function () {
-  /*TODO*/
+    /*TODO*/
 }
 
 var exo1q6red = exo1q2red;
