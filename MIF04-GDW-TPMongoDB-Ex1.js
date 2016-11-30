@@ -11,11 +11,16 @@ var num_etu2 = "p1311388";
 /*** EXO 1 : Q2 **************************************************************/
 
 var exo1q2map = function () {
-  /*TODO*/
+	  emit("restaurants", 1)
+
 }
 
 var exo1q2red = function (key, values) {
-  /*TODO*/
+var sum = 0;
+  for (var i = 0; i < values.length; i++) {
+  	sum = sum + values[i]
+  }
+  return sum
 }
 
 // db.restaurants.mapReduce(exo1q2map, exo1q2red, {out : {inline:1}});
@@ -24,7 +29,7 @@ var exo1q2red = function (key, values) {
 /*** EXO 1 : Q3 **************************************************************/
 
 var exo1q3map = function () {
-  /*TODO*/
+  emit("grades", this.grades.length)
 }
 
 var exo1q3red = exo1q2red;
