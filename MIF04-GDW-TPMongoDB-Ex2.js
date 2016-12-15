@@ -1,11 +1,11 @@
 /*** EXO 2 : Q1 **************************************************************/
 
 var exo2q1map = function () {
-  /*TODO*/
+    /*TODO*/
 }
 
 var exo2q1red = function (key, values) {
-  /*TODO*/
+    /*TODO*/
 }
 
 // 85 réponses
@@ -24,11 +24,11 @@ var exo2q1red = function (key, values) {
 /*** EXO 2 : Q2 **************************************************************/
 
 var exo2q2map = function () {
-  /*TODO*/
+    /*TODO*/
 }
 
 var exo2q2red = function (key, values) {
-  /*TODO*/
+    /*TODO*/
 }
 
 //réponses
@@ -60,11 +60,11 @@ var exo2q2red = function (key, values) {
 /*** EXO 2 : Q3 **************************************************************/
 
 var exo2q3map = function () {
-  /*TODO*/
+    /*TODO*/
 };
 
 var exo2q3red = function (key, values) {
-  /*TODO*/
+    /*TODO*/
 }
 
 //réponses
@@ -90,15 +90,15 @@ var exo2q3red = function (key, values) {
 
 
 exo2q4map = function () {
-  /*TODO*/
+    /*TODO*/
 }
 
 exo2q4red = function (key, values) {
-  /*TODO*/
+    /*TODO*/
 }
 
 exo2q4fin = function (key, val) {
-  /*TODO*/
+    /*TODO*/
 };
 
 //{
@@ -128,11 +128,11 @@ exo2q4fin = function (key, val) {
 /*** EXO 2 : Q5 **************************************************************/
 
 var exo2q5map = function () {
-  /*TODO*/
+    /*TODO*/
 }
 
 var exo2q5red = function (key, values) {
-  /*TODO*/
+    /*TODO*/
 }
 
 //{
@@ -156,16 +156,16 @@ var exo2q5red = function (key, values) {
 /*** EXO 2 : Q6 **************************************************************/
 
 exo2q6map = function () {
-  /*TODO*/
+    /*TODO*/
 }
 
 
 exo2q6red = function (key, values) {
-  /*TODO*/
+    /*TODO*/
 }
 
 exo2q6fin = function (key, val) {
-  /*TODO*/
+    /*TODO*/
 };
 
 

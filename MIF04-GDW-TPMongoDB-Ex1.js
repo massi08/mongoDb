@@ -39,9 +39,8 @@ var exo1q3red = exo1q2red;
 
 var exo1q4map = function () {
 
-  /*TODO*/
-  if(this.borough === "Brooklyn")
-  	emit("Brooklyn", 1)
+    if (this.borough === "Brooklyn")
+        emit("Brooklyn", 1)
 }
 
 var exo1q4red = exo1q2red;
