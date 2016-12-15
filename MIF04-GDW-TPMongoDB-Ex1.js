@@ -41,6 +41,9 @@ var exo1q3red = exo1q2red;
 
 var exo1q4map = function () {
   /*TODO*/
+  if(this.borough === "Brooklyn")
+  	emit("Brooklyn", 1)
+  	
 }
 
 var exo1q4red = exo1q2red;
@@ -49,7 +52,8 @@ var exo1q4red = exo1q2red;
 
 /*** EXO 1 : Q5 **************************************************************/
 
-var exo1q5 = {}   /*TODO*/;
+var exo1q5map = db.restaurants.count();
+var exo1q5red = exo1q2red;
 // reponse : 6086
 
 /*** EXO 1 : Q6 **************************************************************/
