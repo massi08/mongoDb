@@ -70,7 +70,7 @@ var exo1q5 = function () {
 
 /*** EXO 1 : Q6 **************************************************************/
 var hasNameDaniel = function (key) {
-    if(key.match(/(.*)daniel(.*)/g) != null) {
+    if(key.match(/daniel/ig) != null) {
         return true;
     }
     return false;
@@ -78,7 +78,7 @@ var hasNameDaniel = function (key) {
 
 var exo1q6map = function () {
     if(hasNameDaniel(this.name))
-        emmit("nb_daniel", 1);
+        emit("nb_daniel", 1);
 }
 
 var exo1q6red = exo1q2red;
