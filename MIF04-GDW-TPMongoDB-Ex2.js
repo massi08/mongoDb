@@ -68,7 +68,6 @@ var exo2q2red = function (key, values) {
 /*** EXO 2 : Q3 **************************************************************/
 
 var exo2q3map = function () {
-    // var key = '"' + this.cuisine + '"';
     var returnObject = {};
     returnObject[this.cuisine] = 0;
     emit(this.borough, returnObject);
@@ -108,15 +107,37 @@ var exo2q3red = function (key, values) {
 
 
 exo2q4map = function () {
-    /*TODO*/
+    var numberOfVotes = 0;
+    var scores = 0;
+    this.grades.forEach(function (value) {
+        scores += value.score;
+        numberOfVotes += 1;
+    });
+    emit(this.borough, {"w": numberOfVotes, "s": scores, "avg": 0});
 }
 
 exo2q4red = function (key, values) {
-    /*TODO*/
+    var returnObject = {};
+    var sumOfVotes = 0;
+    var sumOfGrades = 0;
+    var valuesLength = values.length;
+    for (var i = 0; i < valuesLength; i++) {
+        sumOfVotes += values[i].w;
+        sumOfGrades += values[i].s;
+    }
+    returnObject["w"] = sumOfVotes;
+    returnObject["s"] = sumOfGrades;
+    returnObject["avg"] = 0;
+    return returnObject;
 }
 
 exo2q4fin = function (key, val) {
-    /*TODO*/
+    var returnObject = {};
+    var avg = (val.s / val.w);
+    returnObject["w"] = val.s;
+    returnObject["s"] = val.w;
+    returnObject["avg"] = avg;
+    return returnObject;
 };
 
 //{
