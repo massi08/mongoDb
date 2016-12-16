@@ -68,11 +68,21 @@ var exo2q2red = function (key, values) {
 /*** EXO 2 : Q3 **************************************************************/
 
 var exo2q3map = function () {
-    /*TODO*/
-};
+    // var key = '"' + this.cuisine + '"';
+    var returnObject = {};
+    returnObject[this.cuisine] = 0;
+    emit(this.borough, returnObject);
+}
 
 var exo2q3red = function (key, values) {
-    /*TODO*/
+    var returnObject = {};
+    var valuesLength = values.length;
+    for (var i = 0; i < valuesLength; i++) {
+        for (var prop in values[i]) {
+            returnObject[prop] = 0;
+        }
+    }
+    return returnObject;
 }
 
 //réponses
