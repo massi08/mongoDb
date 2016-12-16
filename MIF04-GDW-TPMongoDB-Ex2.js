@@ -107,11 +107,10 @@ var exo2q3red = function (key, values) {
 
 
 exo2q4map = function () {
-    var numberOfVotes = 0;
+    var numberOfVotes = this.grades.length;
     var scores = 0;
     this.grades.forEach(function (value) {
         scores += value.score;
-        numberOfVotes += 1;
     });
     emit(this.borough, {"w": numberOfVotes, "s": scores, "avg": 0});
 }
@@ -167,7 +166,7 @@ exo2q4fin = function (key, val) {
 /*** EXO 2 : Q5 **************************************************************/
 
 var exo2q5map = function () {
-    var minScore = 20; //Initialisation des scores au premier
+    var minScore = 2000; //Valeur maximale
     var maxScore = 0;
     this.grades.forEach(function (value) {
         if (value.score < minScore) {
@@ -220,16 +219,51 @@ var exo2q5red = function (key, values) {
 /*** EXO 2 : Q6 **************************************************************/
 
 exo2q6map = function () {
-    /*TODO*/
+    var returnObject = {};
+    var numberOfVotes = this.grades.length;
+    var scores = 0;
+    this.grades.forEach(function (value) {
+        scores += (value.score / numberOfVotes);
+    });
+    var squareScore = scores * scores;
+    returnObject["weight"] = 1;
+    returnObject["value"] = scores;
+    returnObject["square"] = squareScore;
+    returnObject["avg"] = 0;
+    returnObject["std"] = 0;
+    emit(this.borough, returnObject);
 }
 
 
 exo2q6red = function (key, values) {
-    /*TODO*/
+    var returnObject = {};
+    var sumOfVotes = 0;
+    var sumOfGrades = 0;
+    var sumOfSquaredGrades = 0;
+    var valuesLength = values.length;
+    for (var i = 0; i < valuesLength; i++) {
+        sumOfVotes += values[i].weight;
+        sumOfGrades += values[i].value;
+        sumOfSquaredGrades += values[i].square;
+    }
+    returnObject["weight"] = sumOfVotes;
+    returnObject["value"] = sumOfGrades;
+    returnObject["square"] = sumOfSquaredGrades;
+    returnObject["avg"] = 0;
+    returnObject["std"] = 0;
+    return returnObject;
 }
 
 exo2q6fin = function (key, val) {
-    /*TODO*/
+    var returnObject = {};
+    var avg = (val.value / val.weight);
+    var std = Math.sqrt(((val.square) - (val.weight * avg * avg)) / (val.weight - 1));
+    returnObject["weight"] = val.weight;
+    returnObject["value"] = val.value;
+    returnObject["square"] = val.square;
+    returnObject["avg"] = avg;
+    returnObject["std"] = std;
+    return returnObject;
 };
 
 
