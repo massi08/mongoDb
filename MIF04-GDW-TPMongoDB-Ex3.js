@@ -82,7 +82,34 @@ var exo3q2timeAggregationMean = function () {
  */
 /*** EXO 3 : Q3 **************************************************************/
 
-var exo3q3stages = [/* TODO */];
+var exo3q3stages = [
+    {
+        $unwind: "$grades"
+    },
+    {
+        $sort: {"grades.score": -1} //-1 pour ascending sort
+    },
+    {
+        $group: {
+            _id: "$borough",
+            score: {
+                "$first": "$grades.score"
+            },
+            id: {
+                "$first": "$name"
+            },
+        }
+    },
+    {
+        $project: {
+            _id: "$_id",
+            max: {
+                score: "$score",
+                id: "$id"
+            }
+        }
+    }
+];
 //cette question est assez difficile
 
 //REPONSES
