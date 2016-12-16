@@ -167,11 +167,36 @@ exo2q4fin = function (key, val) {
 /*** EXO 2 : Q5 **************************************************************/
 
 var exo2q5map = function () {
-    /*TODO*/
+    var minScore = 20; //Initialisation des scores au premier
+    var maxScore = 0;
+    this.grades.forEach(function (value) {
+        if (value.score < minScore) {
+            minScore = value.score;
+        }
+        if (value.score > maxScore) {
+            maxScore = value.score;
+        }
+    });
+    emit(this.borough, {"min": {"score": minScore, "id": this.name}, "max": {"score": maxScore, "id": this.name}})
 }
 
 var exo2q5red = function (key, values) {
-    /*TODO*/
+    var minScore = values[0].min.score;
+    var maxScore = values[0].max.score;
+    var minId = values[0].min.id;
+    var maxId = values[0].max.id;
+    var valuesLength = values.length;
+    for (var i = 1; i < valuesLength; i++) {
+        if (values[i].min.score < minScore) {
+            minScore = values[i].min.score;
+            minId = values[i].min.id;
+        }
+        if (values[i].max.score > maxScore) {
+            maxScore = values[i].max.score;
+            maxId = values[i].max.id;
+        }
+    }
+    return {"min": {"score": minScore, "id": minId}, "max": {"score": maxScore, "id": maxId}};
 }
 
 //{
