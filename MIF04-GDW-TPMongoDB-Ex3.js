@@ -1,7 +1,19 @@
 
 /*** EXO 3 : Q1 **************************************************************/
 
-var exo3q1stages = [ /* TODO */  ];
+var exo3q1stages = [
+    {
+      $unwind: "$grades"
+    },
+    {
+        $group: {
+            _id: "$borough",
+            avg: {
+                $avg: "$grades.score"
+            }
+        }
+    }
+];
 
 //> db.restaurants.aggregate( exo3q1stages );
 
