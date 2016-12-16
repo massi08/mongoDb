@@ -63,21 +63,21 @@ var exo1q4red = function (key, values) {
 
 /*** EXO 1 : Q5 **************************************************************/
 var exo1q5 = function () {
-    return db.restaurants.find({borough:"Brooklyn"}).count();
+    return db.restaurants.find({borough: "Brooklyn"}).count();
 }
 // exo1q5();
 // reponse : 6086
 
 /*** EXO 1 : Q6 **************************************************************/
 var hasNameDaniel = function (key) {
-    if(key.match(/daniel/ig) != null) {
+    if (key.match(/daniel/ig) != null) {
         return true;
     }
     return false;
 }
 
 var exo1q6map = function () {
-    if(hasNameDaniel(this.name))
+    if (hasNameDaniel(this.name))
         emit("nb_daniel", 1);
 }
 

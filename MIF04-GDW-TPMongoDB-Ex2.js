@@ -1,11 +1,11 @@
 /*** EXO 2 : Q1 **************************************************************/
 
 var exo2q1map = function () {
-    /*TODO*/
+    emit(this.cuisine, 0)
 }
 
 var exo2q1red = function (key, values) {
-    /*TODO*/
+    return 0;
 }
 
 // 85 réponses
@@ -24,11 +24,19 @@ var exo2q1red = function (key, values) {
 /*** EXO 2 : Q2 **************************************************************/
 
 var exo2q2map = function () {
-    /*TODO*/
+    if (this.cuisine === "Bakery")
+        emit(this.borough, {"restaurants": [this.name]});
 }
 
 var exo2q2red = function (key, values) {
-    /*TODO*/
+    var returnObject = {};
+    var restoNames = [];
+    var valuesLength = values.length;
+    for (var i = 0; i < valuesLength; i++) {
+        restoNames.push(values[i].restaurants[0]);
+    }
+    returnObject["restaurants"] = restoNames;
+    return returnObject;
 }
 
 //réponses
