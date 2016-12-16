@@ -56,7 +56,7 @@ var aggregationTab = function () {
     return perfTab;
 }
 
-/*TODO : la valeur moyenne pour map/reduce */
+/* La valeur moyenne pour map/reduce */
 var exo3q2timeMapReduceMean = function () {
     var perfTab = mapReduceTab();
     var totalTime = 0;
@@ -66,7 +66,7 @@ var exo3q2timeMapReduceMean = function () {
     return totalTime / 10;
 };
 
-/*TODO : la valeur moyenne pour l'aggrégation pipeline */
+/* La valeur moyenne pour l'aggrégation pipeline */
 var exo3q2timeAggregationMean = function () {
     var perfTab = aggregationTab();
     var totalTime = 0;
