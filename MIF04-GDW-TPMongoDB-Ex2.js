@@ -133,8 +133,8 @@ exo2q4red = function (key, values) {
 exo2q4fin = function (key, val) {
     var returnObject = {};
     var avg = (val.s / val.w);
-    returnObject["w"] = val.s;
-    returnObject["s"] = val.w;
+    returnObject["w"] = val.w;
+    returnObject["s"] = val.s;
     returnObject["avg"] = avg;
     return returnObject;
 };
