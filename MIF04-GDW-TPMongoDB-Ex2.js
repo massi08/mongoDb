@@ -219,18 +219,14 @@ var exo2q5red = function (key, values) {
 /*** EXO 2 : Q6 **************************************************************/
 
 exo2q6map = function () {
-    var returnObject = {};
+    var returnObject = {"weight": 0, "value": 0, "square": 0, "avg": 0, "std": 0};
     var numberOfVotes = this.grades.length;
     var scores = 0;
     this.grades.forEach(function (value) {
-        scores += (value.score / numberOfVotes);
+        returnObject.weight = 1;
+        returnObject.value += (value.score / numberOfVotes);
     });
-    var squareScore = scores * scores;
-    returnObject["weight"] = 1;
-    returnObject["value"] = scores;
-    returnObject["square"] = squareScore;
-    returnObject["avg"] = 0;
-    returnObject["std"] = 0;
+    returnObject.square = returnObject.value * returnObject.value;
     emit(this.borough, returnObject);
 }
 
