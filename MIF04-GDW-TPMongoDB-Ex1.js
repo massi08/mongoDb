@@ -71,7 +71,6 @@ var exo1q5 = function () {
 /*** EXO 1 : Q6 **************************************************************/
 var hasNameDaniel = function (key) {
     if(key.match(/(.*)daniel(.*)/g) != null) {
-        print("LOL");
         return true;
     }
     return false;
